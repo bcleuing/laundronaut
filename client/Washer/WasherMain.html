@@ -1,0 +1,37 @@
+<template name="WasherMain">
+    <h4>All Washers</h4>
+    <br />
+    <div class="row">
+        {{#momentum plugin='fade'}}
+            {{#each washers}}
+                <div class="col s12 m4 l3">
+                    {{> WasherCard}}
+                </div>
+            {{/each}}
+        {{/momentum}}
+    </div>
+</template>
+
+<template name="WasherCard">
+    <div class="card hoverable">
+        <div class="card-image">
+            <img src="http://ecx.images-amazon.com/images/I/31vOSZkTvEL._AC_SS200_.jpg">
+        </div>
+        <div class="card-content center-align">
+            <span class="card-title">{{name}}</span>
+            <p>
+                <i class="{{getStatusColor}}-text medium material-icons tooltipped" style="cursor: pointer"
+                    data-position="bottom" data-delay="50" data-tooltip="{{firstLetterToUpper status}}">{{getStatusIcon}}</i>
+                <br />
+                {{#if inWasherPage}}
+                    {{#each hostel hostel_id}}
+                        <a href="hostel/detail/{{_id}}"><i class="tiny material-icons">location_on</i> {{name}}</a>
+                    {{/each}}
+                {{/if}}
+            </p>
+        </div>
+        <div class="card-action">
+            <a href="/washer/detail/{{_id}}">Details</a>
+        </div>
+    </div>
+</template>

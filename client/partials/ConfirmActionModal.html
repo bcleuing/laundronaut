@@ -1,0 +1,29 @@
+<template name="ConfirmActionModal">
+    <div id="confirmActionModal" class="ui basic modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Warning
+        </div>
+        <div class="image content">
+            <div class="image">
+                <i class="warning yellow icon"></i>
+            </div>
+            <br>
+            <div class="center aligned description">
+                <p>{{confirmMessage}}</p>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="two fluid ui inverted buttons">
+                <div class="ui cancel red basic inverted button">
+                    <i class="remove icon"></i>
+                    No
+                </div>
+                <div class="ui ok green basic inverted button confirmActionModalConfirm">
+                    <i class="checkmark icon"></i>
+                    Yes
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

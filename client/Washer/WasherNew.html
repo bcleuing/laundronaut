@@ -1,0 +1,24 @@
+<template name="WasherNew">
+    <div class="card-panel center-align"><h4>New Washer</h4></div>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input name="washerName" id="washerName" type="text" class="validate">
+                    <label for="washerName">Washer Name</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select name="targetHostel" id="targetHostel" class="browser-default">
+                        <option value="" disabled selected>Choose the hostel where the washer is in</option>
+                        {{#each hostels}}
+                            <option value="{{_id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <div class="row center">
+                <button type="submit" class="btn waves-light waves-effect">Create</button>
+            </div>
+        </form>
+    </div>
+</template>

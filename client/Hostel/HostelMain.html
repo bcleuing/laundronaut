@@ -1,0 +1,26 @@
+<template name="HostelMain">
+    <h4>All Hostels</h4>
+    <br />
+    <div class="row">
+        {{#each hostels}}
+            <div class="col s12 m6 l6">
+                {{> HostelCard}}
+            </div>
+        {{/each}}
+    </div>
+</template>
+
+<template name="HostelCard">
+    <div class="card small hoverable">
+        <div class="card-image">
+            <img src="resources/img/{{thumbnail}}">
+            <span class="card-title">{{name}}</span>
+        </div>
+        <div class="card-content">
+            <i class="tiny material-icons">location_on</i> {{street}}, {{district}}
+        </div>
+        <div class="card-action">
+            <a href="/hostel/detail/{{_id}}">Details</a>
+        </div>
+    </div>
+</template>
