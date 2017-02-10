@@ -44,5 +44,24 @@ Template.WasherCard.helpers({
     inWasherPage: function() {
         var currentRoute = FlowRouter.current().route;
         return currentRoute.options.name == 'washer-home';
+    },
+    washerAvailable: function() {
+        return this.status == 'available';
+    }
+});
+Template.WasherCard.events({
+    'click .reserveBtn': function() {
+        var washerId = this._id;
+        $('#phoneNumInputModal-' + washerId).openModal();
+    },
+    'click .submitReserveBtn': function() {
+        var washerId = this._id;
+        var userPhoneNum = $('#userPhoneNum-' + washerId).val();
+        $('#authCodeDiv-' + washerId).show();
+        $('#phoneNumDiv-' + washerId).hide();
+
+        Meteor.call('sendReserveAuthCodeSMS', washerId, userPhoneNum, function(err, result) {
+
+        });
     }
 });

@@ -32,6 +32,35 @@
         </div>
         <div class="card-action">
             <a href="/washer/detail/{{_id}}">Details</a>
+            {{#if washerAvailable}}
+                <a class="waves-effect waves-teal btn reserveBtn">Reserve</a>
+            {{/if}}
+        </div>
+        <div id="phoneNumInputModal-{{_id}}" class="modal">
+            <div id="phoneNumDiv-{{_id}}" class="modal-content">
+                <h4>Reserving {{name}}</h4>
+                <p>Please enter your phone number.</p>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="userPhoneNum-{{_id}}" type="text" class="validate">
+                        <label for="userPhoneNum-{{_id}}">Phone Number</label>
+                    </div>
+                </div>
+            </div>
+            <div id="authCodeDiv-{{_id}}" class="modal-content" hidden>
+                <h4>Reserving {{name}}</h4>
+                <p>Please input the code sent to your mobile phone</p>
+                <div class="row hidden">
+                    <div class="input-field col s12">
+                        <input id="inputAuthCode-{{_id}}" type="text" class="validate">
+                        <label for="inputAuthCode-{{_id}}">Code</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action waves-effect waves-green btn-flat submitReserveBtn">Submit</a>
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            </div>
         </div>
     </div>
 </template>

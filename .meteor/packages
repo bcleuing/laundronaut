@@ -22,13 +22,13 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 fourseven:scss
 kadira:flow-router
 kadira:blaze-layout
-session
-handlebars
+session@1.1.7
+handlebars@1.0.7
 momentjs:moment
 materialize:materialize@=0.97.6
 msavin:mongol
 percolate:synced-cron
-http
-check
+http@1.2.10
+check@1.2.4
 percolate:momentum
 mkarliner:mqtt

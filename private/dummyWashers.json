@@ -2,37 +2,37 @@
     {
         "name": "Washing Machine 1",
         "status": "available",
-        "hostel_id": "Pf7R6sggqLRqDkwBo",
+        "hostel_id": "c7hzTRD2Pb3RNzWv6",
         "backend_channel": 216779
     },
     {
         "name": "Washing Machine 2",
         "status": "available",
-        "hostel_id": "Pf7R6sggqLRqDkwBo",
+        "hostel_id": "c7hzTRD2Pb3RNzWv6",
         "backend_channel": ""
     },
     {
         "name": "Washing Machine 3",
         "status": "available",
-        "hostel_id": "Pf7R6sggqLRqDkwBo",
+        "hostel_id": "c7hzTRD2Pb3RNzWv6",
         "backend_channel": ""
     },
     {
         "name": "Washing Machine 1",
         "status": "available",
-        "hostel_id": "8aw9WwKtdWL5HqfvE",
+        "hostel_id": "o28j8AHRry7jz7oB3",
         "backend_channel": ""
     },
     {
         "name": "Washing Machine 2",
         "status": "available",
-        "hostel_id": "8aw9WwKtdWL5HqfvE",
+        "hostel_id": "o28j8AHRry7jz7oB3",
         "backend_channel": ""
     },
     {
         "name": "Washing Machine 3",
         "status": "available",
-        "hostel_id": "8aw9WwKtdWL5HqfvE",
+        "hostel_id": "o28j8AHRry7jz7oB3",
         "backend_channel": ""
     }
 ]
