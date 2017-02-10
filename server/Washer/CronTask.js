@@ -2,7 +2,7 @@ SyncedCron.add({
     // // getting sensor values from washers peridically
     name: 'Fetch Sensor Values of Washers',
     schedule: function(parser) {
-        return parser.text('every 20 seconds');
+        return parser.text('every 50 seconds');
     },
     job: function() {
         var washers = WasherCollection.find({}).fetch();
