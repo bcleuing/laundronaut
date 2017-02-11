@@ -37,6 +37,8 @@ Template.WasherCard.helpers({
                 return 'check_circle';
             case 'in-use':
                 return 'clear';
+            case 'reserved':
+                return 'block';
             default:
                 return 'help_outline';
         }
@@ -52,16 +54,28 @@ Template.WasherCard.helpers({
 Template.WasherCard.events({
     'click .reserveBtn': function() {
         var washerId = this._id;
+        Session.set('reservingWasherId', washerId);
         $('#phoneNumInputModal-' + washerId).openModal();
     },
     'click .submitReserveBtn': function() {
-        var washerId = this._id;
+        var washerId = Session.get('reservingWasherId');
         var userPhoneNum = $('#userPhoneNum-' + washerId).val();
-        $('#authCodeDiv-' + washerId).show();
-        $('#phoneNumDiv-' + washerId).hide();
-
+        Session.set('userPhoneNum', userPhoneNum);
         Meteor.call('sendReserveAuthCodeSMS', washerId, userPhoneNum, function(err, result) {
-
+            $('#phoneNumInputModal-' + washerId).closeModal();
+            $('#authCodeInputModal-' + washerId).openModal();
+        });
+    },
+    'click .submitAuthCodeBtn': function() {
+        var washerId = Session.get('reservingWasherId');
+        var authCode = $('#inputAuthCode-' + washerId).val();
+        var phoneNum = Session.get('userPhoneNum');
+        Meteor.call('checkAuthCode', phoneNum, authCode, function(err, result) {
+            console.log(result);
+            if (result) {
+                Materialize.toast("The washer has been successfully reserved!", 5000);
+                $('#authCodeInputModal-' + washerId).closeModal();
+            }
         });
     }
 });

@@ -47,7 +47,14 @@
                     </div>
                 </div>
             </div>
-            <div id="authCodeDiv-{{_id}}" class="modal-content" hidden>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action waves-effect waves-green btn-flat submitReserveBtn">Submit</a>
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            </div>
+        </div>
+
+        <div id="authCodeInputModal-{{_id}}" class="modal">
+            <div id="authCodeDiv-{{_id}}" class="modal-content">
                 <h4>Reserving {{name}}</h4>
                 <p>Please input the code sent to your mobile phone</p>
                 <div class="row hidden">
@@ -58,7 +65,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-action waves-effect waves-green btn-flat submitReserveBtn">Submit</a>
+                <a href="#!" class="modal-action waves-effect waves-green btn-flat submitAuthCodeBtn">Submit</a>
                 <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
             </div>
         </div>

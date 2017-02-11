@@ -1,5 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
-    SyncedCron.start();
+    /**
+        TODO: Change from SyncedCron to MQTT Broker Subscription
+    **/
+    // SyncedCron.start();
 });

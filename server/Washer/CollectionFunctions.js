@@ -1,5 +1,6 @@
 WasherCollection = new Mongo.Collection('washers');
 SensorValueCollection = new Mongo.Collection('sensorValues');
+ReserveCollection = new Mongo.Collection('washerReserves');
 
 Meteor.startup(() => {
     if (WasherCollection.find({}).count() === 0) {
