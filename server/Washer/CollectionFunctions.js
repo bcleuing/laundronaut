@@ -10,6 +10,30 @@ Meteor.startup(() => {
         });
         console.log('Inserted Washers');
     }
+    var brokerUrl = 'mqtt://broker.hivemq.com';
+
+    var mqtt = require('mqtt');
+    var client  = mqtt.connect(brokerUrl);
+
+    client.on('connect', function () {
+        client.subscribe('is439/group7/G1666112R');
+        client.publish('is439/group7/G1666112R', 'Hello mqtt');
+    });
+
+    client.on('message', function (topic, message) {
+        // var parsedMsg = JSON.parse(message);
+        console.log(message.toString());
+        /*
+        SensorValueCollection.insert({
+            "created_at": new Date(),
+            "vibration_value": latestVibrationValue,
+            "light_status": latestLightStatus,
+            "washer_id": washerId
+        });
+        */
+        // client.end();
+    });
+
 });
 
 Meteor.publish('allWashers', function () {
